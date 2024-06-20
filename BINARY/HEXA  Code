@@ -1,0 +1,64 @@
+import java.util.*;
+public class Hex 
+{
+    public static void run()
+    {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Enter a number!");
+        int num=scanner.nextInt();
+        String s = convert(num);
+        System.out.println(s);
+    }
+    
+     public static String convert(int num)
+    {
+        ArrayList<String> hexa= new ArrayList<String>();
+        String n="";
+
+        for(int i=0;i<10;i++)
+        {
+            n=""+i;
+            hexa.add(n);
+        }
+        hexa.add("A");
+        hexa.add("B");
+        hexa.add("C");
+        hexa.add("D");
+        hexa.add("E");
+        hexa.add("F");
+        
+        int b=num;
+        int r=0;
+        int h=num;
+    
+        String s="";
+        while(h>0)
+        {
+            r=h%16;
+            s=hexa.get(r)+s;
+            h=h/16;
+            
+            
+            
+        }
+        String s2="";
+        while(b!=0)
+        {
+            s2+=b%2;
+            b=b/2;
+        }
+        return ""+""+s+"\n"+""+s2;
+    
+
+        
+        
+    }
+    
+    public static void main(String[] args)
+    {
+        Hex hexClass = new Hex(); 
+        
+        hexClass.run();
+        
+    }
+}
